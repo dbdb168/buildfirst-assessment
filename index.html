@@ -6,26 +6,16 @@
 <title>BuildFirst Assessment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --black: #1A1A1A;
     --coral: #C97B5B;
-    --coral-dark: #B56D4F;
     --coral-light: #F5EDE8;
     --warm-gray: #6B6360;
     --light-gray: #F8F6F4;
     --divider: #E8E0DA;
     --white: #FFFFFF;
-    --drain-1: #B85450;
-    --drain-2: #D4856E;
-    --neutral: #9E9792;
-    --energy-4: #7DAA6E;
-    --energy-5: #4A8C3F;
-    --delegation: #3A7BB5;
-    --description: #D4912E;
-    --discernment: #6B8E5A;
-    --diligence: #9B5BA3;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -149,6 +139,13 @@
     margin-bottom: 20px;
   }
 
+  .field-hint {
+    font-size: 13px;
+    color: var(--warm-gray);
+    font-style: italic;
+    margin-top: 4px;
+  }
+
   /* Energy grid */
   .energy-grid {
     margin-bottom: 24px;
@@ -215,11 +212,11 @@
     color: var(--white);
   }
 
-  .energy-btn.selected.drain-1 { background: var(--drain-1); border-color: var(--drain-1); }
-  .energy-btn.selected.drain-2 { background: var(--drain-2); border-color: var(--drain-2); }
-  .energy-btn.selected.neutral { background: var(--neutral); border-color: var(--neutral); }
-  .energy-btn.selected.energy-4 { background: var(--energy-4); border-color: var(--energy-4); }
-  .energy-btn.selected.energy-5 { background: var(--energy-5); border-color: var(--energy-5); }
+  .energy-btn.selected.drain-1 { background: #B85450; border-color: #B85450; }
+  .energy-btn.selected.drain-2 { background: #D4856E; border-color: #D4856E; }
+  .energy-btn.selected.neutral { background: var(--warm-gray); border-color: var(--warm-gray); }
+  .energy-btn.selected.energy-4 { background: #7DAA6E; border-color: #7DAA6E; }
+  .energy-btn.selected.energy-5 { background: #4A8C3F; border-color: #4A8C3F; }
 
   /* Radio/checkbox options */
   .option-group {
@@ -262,59 +259,6 @@
     background: var(--coral-light);
   }
 
-  /* Question numbering */
-  .q-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--coral-light);
-    color: var(--coral);
-    font-size: 13px;
-    font-weight: 700;
-    margin-right: 10px;
-    flex-shrink: 0;
-  }
-
-  .q-label {
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    font-size: 15px;
-    margin-bottom: 12px;
-    color: var(--black);
-  }
-
-  .q-dimension {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin-left: auto;
-  }
-
-  .q-dimension.dim-delegation { background: #E8F0F8; color: var(--delegation); }
-  .q-dimension.dim-description { background: #FDF3E5; color: var(--description); }
-  .q-dimension.dim-discernment { background: #EDF3EA; color: var(--discernment); }
-  .q-dimension.dim-diligence { background: #F3EAF5; color: var(--diligence); }
-  .q-dimension.dim-spectrum { background: var(--coral-light); color: var(--coral); }
-
-  .fluency-question {
-    margin-bottom: 28px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--light-gray);
-  }
-
-  .fluency-question:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
   /* Submit */
   .submit-section {
     background: var(--light-gray);
@@ -343,7 +287,7 @@
   }
 
   button[type="submit"]:hover {
-    background: var(--coral-dark);
+    background: #B56D4F;
   }
 
   button[type="submit"]:disabled {
@@ -373,230 +317,21 @@
     z-index: 100;
   }
 
-  /* ==================== */
-  /* RESULTS STATE        */
-  /* ==================== */
-  .results-state {
+  /* Thank you state */
+  .thank-you {
     display: none;
+    text-align: center;
+    padding: 80px 0;
   }
 
-  .results-state h1 {
-    margin-bottom: 8px;
-  }
-
-  .results-intro {
-    font-size: 15.5px;
-    line-height: 1.75;
-    color: var(--warm-gray);
-    margin-bottom: 32px;
-  }
-
-  /* Spectrum bar */
-  .spectrum-section {
-    margin-bottom: 40px;
-  }
-
-  .spectrum-label {
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 18px;
-    margin-bottom: 4px;
-  }
-
-  .spectrum-sublabel {
-    font-size: 13px;
-    color: var(--warm-gray);
+  .thank-you h1 {
     margin-bottom: 16px;
   }
 
-  .spectrum-bar {
-    display: flex;
-    border-radius: 8px;
-    overflow: hidden;
-    height: 48px;
-    margin-bottom: 8px;
-    position: relative;
-  }
-
-  .spectrum-segment {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--white);
-    opacity: 0.35;
-    transition: opacity 0.4s;
-    position: relative;
-  }
-
-  .spectrum-segment.active {
-    opacity: 1;
-  }
-
-  .spectrum-segment.seg-asking { background: #B85450; }
-  .spectrum-segment.seg-automation { background: #D4912E; }
-  .spectrum-segment.seg-augmentation { background: #3A7BB5; }
-  .spectrum-segment.seg-agency { background: #4A8C3F; }
-
-  .spectrum-marker {
-    position: absolute;
-    bottom: -22px;
-    font-size: 18px;
-    line-height: 1;
-  }
-
-  .spectrum-description {
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--black);
-    margin-top: 20px;
-    padding: 16px;
-    background: var(--light-gray);
-    border-radius: 8px;
-  }
-
-  .spectrum-description strong {
-    color: var(--coral);
-  }
-
-  /* 4D cards */
-  .dimension-section {
-    margin-bottom: 40px;
-  }
-
-  .dimension-section .section-header {
-    margin-bottom: 4px;
-  }
-
-  .dimension-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 16px;
-  }
-
-  .dim-card {
-    border: 1px solid var(--divider);
-    border-radius: 8px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .dim-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-  }
-
-  .dim-card.card-delegation::before { background: var(--delegation); }
-  .dim-card.card-description::before { background: var(--description); }
-  .dim-card.card-discernment::before { background: var(--discernment); }
-  .dim-card.card-diligence::before { background: var(--diligence); }
-
-  .dim-card-title {
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 17px;
-    margin-bottom: 2px;
-  }
-
-  .dim-card-what {
-    font-size: 12px;
+  .thank-you p {
+    font-size: 16px;
+    line-height: 1.75;
     color: var(--warm-gray);
-    margin-bottom: 12px;
-    line-height: 1.5;
-  }
-
-  .dim-card-level {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 8px;
-  }
-
-  .dim-card-level.level-developing { color: var(--drain-1); }
-  .dim-card-level.level-growing { color: var(--description); }
-  .dim-card-level.level-strong { color: var(--energy-5); }
-
-  .dim-bar-track {
-    height: 6px;
-    background: var(--light-gray);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .dim-bar-fill {
-    height: 100%;
-    border-radius: 3px;
-    transition: width 0.6s ease;
-  }
-
-  .dim-card.card-delegation .dim-bar-fill { background: var(--delegation); }
-  .dim-card.card-description .dim-bar-fill { background: var(--description); }
-  .dim-card.card-discernment .dim-bar-fill { background: var(--discernment); }
-  .dim-card.card-diligence .dim-bar-fill { background: var(--diligence); }
-
-  /* Focus area */
-  .focus-area {
-    background: var(--coral-light);
-    border-radius: 8px;
-    padding: 20px 24px;
-    margin-bottom: 40px;
-  }
-
-  .focus-area-title {
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 17px;
-    margin-bottom: 8px;
-  }
-
-  .focus-area p {
-    font-size: 14.5px;
-    line-height: 1.7;
-    color: var(--black);
-  }
-
-  /* Sent confirmation */
-  .sent-confirmation {
-    text-align: center;
-    padding: 24px;
-    background: var(--light-gray);
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-
-  .sent-confirmation p {
-    font-size: 14.5px;
-    color: var(--warm-gray);
-    line-height: 1.7;
-  }
-
-  .sent-confirmation .check {
-    font-size: 32px;
-    margin-bottom: 8px;
-  }
-
-  /* Framework attribution */
-  .framework-note {
-    font-size: 12.5px;
-    color: var(--warm-gray);
-    text-align: center;
-    margin-top: 16px;
-    line-height: 1.6;
-  }
-
-  .framework-note a {
-    color: var(--coral);
-    text-decoration: none;
-  }
-
-  .framework-note a:hover {
-    text-decoration: underline;
   }
 
   /* Responsive */
@@ -605,8 +340,6 @@
     h1 { font-size: 28px; }
     .energy-row { grid-template-columns: 1fr; gap: 8px; }
     .energy-scale { justify-content: center; }
-    .dimension-grid { grid-template-columns: 1fr; }
-    .q-dimension { display: none; }
   }
 </style>
 </head>
@@ -619,15 +352,20 @@
     <span class="logo-build">Build</span><span class="logo-first">First</span>
   </div>
 
-  <!-- ============ FORM STATE ============ -->
+  <!-- FORM STATE -->
   <div id="formState">
     <h1>Before We Start</h1>
-    <div class="subtitle">Your assessment</div>
+    <div class="subtitle" id="clientSubtitle">Your assessment</div>
 
-    <p class="intro">This helps me understand how you work, where AI fits in your world, and what we could build together. Mostly quick selections with a few places to think out loud.</p>
+    <p class="intro">This helps me understand how you work, where AI fits in your world, and what we should build together first. Mostly quick selections with a few places to think out loud.</p>
     <p class="time-note">Takes about 10 minutes.</p>
 
-    <form id="assessmentForm">
+    <form id="assessmentForm" action="https://formsubmit.co/david@thisisluminary.co" method="POST">
+      <!-- Formsubmit config -->
+      <input type="hidden" name="_subject" id="emailSubject" value="BuildFirst Assessment Response">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" id="thankYouUrl" value="">
 
       <!-- SECTION 1: About You -->
       <div class="section">
@@ -637,6 +375,14 @@
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="Name" required>
+        </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="Company" required>
+        </div>
+        <div class="field">
+          <label for="role">Role / Title</label>
+          <input type="text" id="role" name="Role" required>
         </div>
         <div class="field">
           <label for="email">Email</label>
@@ -659,17 +405,46 @@
         </div>
       </div>
 
-      <!-- SECTION 3: AI Fluency (4D Framework) -->
+      <!-- SECTION 3: Where You Are with AI -->
       <div class="section">
-        <h2 class="section-header">Your AI fluency</h2>
-        <div class="section-desc">Ten questions based on Anthropic's 4D Framework. Pick the answer closest to where you are today. No wrong answers.</div>
+        <h2 class="section-header">Where you are with AI</h2>
+        <div class="section-desc">Honest answers only. No judgement here.</div>
 
-        <div id="fluencyQuestions">
-          <!-- Generated by JS -->
+        <div class="field">
+          <label>How much have you used AI tools?</label>
+          <div class="option-group" id="aiAdoption">
+            <label class="option-label"><input type="radio" name="AI Adoption" value="Never touched it" required> Never touched it</label>
+            <label class="option-label"><input type="radio" name="AI Adoption" value="Tried it once or twice"> Tried ChatGPT once or twice</label>
+            <label class="option-label"><input type="radio" name="AI Adoption" value="Use it occasionally"> Use it occasionally for specific things</label>
+            <label class="option-label"><input type="radio" name="AI Adoption" value="Use it regularly"> Use it regularly in my work</label>
+            <label class="option-label"><input type="radio" name="AI Adoption" value="Building with it"> Building things with it</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Which tools have you tried? (Select all that apply)</label>
+          <div class="option-group" id="aiTools">
+            <label class="option-label"><input type="checkbox" name="Tools Used" value="ChatGPT"> ChatGPT</label>
+            <label class="option-label"><input type="checkbox" name="Tools Used" value="Claude"> Claude</label>
+            <label class="option-label"><input type="checkbox" name="Tools Used" value="Perplexity"> Perplexity</label>
+            <label class="option-label"><input type="checkbox" name="Tools Used" value="Copilot"> Microsoft Copilot</label>
+            <label class="option-label"><input type="checkbox" name="Tools Used" value="Industry-specific"> Industry-specific AI tools</label>
+            <label class="option-label"><input type="checkbox" name="Tools Used" value="None"> None</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>How do you feel about AI in your industry right now?</label>
+          <div class="option-group" id="aiSentiment">
+            <label class="option-label"><input type="radio" name="AI Sentiment" value="Sceptical" required> Sceptical. Show me.</label>
+            <label class="option-label"><input type="radio" name="AI Sentiment" value="Cautious but curious"> Cautious but curious</label>
+            <label class="option-label"><input type="radio" name="AI Sentiment" value="Excited"> Excited about the possibilities</label>
+            <label class="option-label"><input type="radio" name="AI Sentiment" value="Already adapting"> Already adapting, want to move faster</label>
+          </div>
         </div>
       </div>
 
-      <!-- SECTION 4: How You Learn -->
+      <!-- SECTION 4: How You Process -->
       <div class="section">
         <h2 class="section-header">How you take things in</h2>
         <div class="section-desc">This helps me tailor the sessions to how you learn best.</div>
@@ -683,16 +458,21 @@
             <label class="option-label"><input type="radio" name="Learning Style" value="Walk me through it"> Want someone to walk me through it step by step</label>
           </div>
         </div>
+
+        <div class="field">
+          <label for="psychometric">Have you done any psychometric assessments? (DISC, StrengthsFinder, Myers-Briggs, Enneagram)</label>
+          <textarea id="psychometric" name="Psychometric Results" rows="2" placeholder="Paste results or type your profile if you know it. If not, no worries."></textarea>
+        </div>
       </div>
 
-      <!-- SECTION 5: Working Together -->
+      <!-- SECTION 5: The Problem -->
       <div class="section">
-        <h2 class="section-header">If we were to work together</h2>
-        <div class="section-desc">This is the important bit. I want to find something real we can build together in our first session. Think about one of those energy drains above, or anything else that came to mind.</div>
+        <h2 class="section-header">The problem we will solve</h2>
+        <div class="section-desc">This is the important bit. I want to find something real we can build together in our first session. You might already have something in mind from the energy map above. If one of those drains jumped out at you, start there.</div>
 
         <div class="field">
           <label for="problem">Name one thing in your work that takes too much time or energy.</label>
-          <textarea id="problem" name="Problem to Solve" rows="3" required placeholder="Be specific. A task, a process, a recurring headache."></textarea>
+          <textarea id="problem" name="Problem to Solve" rows="3" required placeholder="Be specific. A task, a process, a recurring headache. Could be something you flagged above."></textarea>
         </div>
 
         <div class="field">
@@ -701,7 +481,7 @@
         </div>
 
         <div class="field">
-          <label for="problemDetail">Walk me through it briefly. When does it come up? Who is involved?</label>
+          <label for="problemDetail">Walk me through it briefly. When does it come up? Who is involved? What does it look like?</label>
           <textarea id="problemDetail" name="Problem Detail" rows="4" placeholder="How often? What format is the information in? Where does it live?"></textarea>
         </div>
 
@@ -718,86 +498,24 @@
 
       <!-- Submit -->
       <div class="submit-section">
-        <p>That is it. I will use this to prepare something real for our first session. You will also get a copy of your responses and your AI fluency results.</p>
+        <p>That is it. I will use this to prepare something real for our first session. You will see it come to life.</p>
         <button type="submit" id="submitBtn">Send my answers</button>
       </div>
     </form>
   </div>
 
-  <!-- ============ RESULTS STATE ============ -->
-  <div class="results-state" id="resultsState">
-    <div class="sent-confirmation">
-      <div class="check">&#10003;</div>
-      <p>Your responses have been sent. A copy is on its way to <strong id="resultEmail"></strong>.</p>
-    </div>
-
-    <h1>Your AI Fluency</h1>
-    <p class="results-intro">Here is where you are today, based on Anthropic's 4D AI Fluency Framework. This is a starting point, not a grade.</p>
-
-    <!-- Spectrum -->
-    <div class="spectrum-section">
-      <div class="spectrum-label">Your position</div>
-      <div class="spectrum-sublabel">Asking &rarr; Automation &rarr; Augmentation &rarr; Agency</div>
-      <div class="spectrum-bar" id="spectrumBar">
-        <div class="spectrum-segment seg-asking" data-stage="asking">Asking</div>
-        <div class="spectrum-segment seg-automation" data-stage="automation">Automation</div>
-        <div class="spectrum-segment seg-augmentation" data-stage="augmentation">Augmentation</div>
-        <div class="spectrum-segment seg-agency" data-stage="agency">Agency</div>
-      </div>
-      <div class="spectrum-description" id="spectrumDesc"></div>
-    </div>
-
-    <!-- 4D Cards -->
-    <div class="dimension-section">
-      <h2 class="section-header">The 4 Dimensions</h2>
-      <div class="section-desc">How you scored across each fluency dimension.</div>
-
-      <div class="dimension-grid" id="dimensionGrid">
-        <div class="dim-card card-delegation">
-          <div class="dim-card-title">Delegation</div>
-          <div class="dim-card-what">Deciding what to hand off to AI</div>
-          <div class="dim-card-level" id="delLevel"></div>
-          <div class="dim-bar-track"><div class="dim-bar-fill" id="delBar"></div></div>
-        </div>
-        <div class="dim-card card-description">
-          <div class="dim-card-title">Description</div>
-          <div class="dim-card-what">Communicating clearly with AI</div>
-          <div class="dim-card-level" id="descLevel"></div>
-          <div class="dim-bar-track"><div class="dim-bar-fill" id="descBar"></div></div>
-        </div>
-        <div class="dim-card card-discernment">
-          <div class="dim-card-title">Discernment</div>
-          <div class="dim-card-what">Evaluating AI output quality</div>
-          <div class="dim-card-level" id="discLevel"></div>
-          <div class="dim-bar-track"><div class="dim-bar-fill" id="discBar"></div></div>
-        </div>
-        <div class="dim-card card-diligence">
-          <div class="dim-card-title">Diligence</div>
-          <div class="dim-card-what">Responsible and safe AI use</div>
-          <div class="dim-card-level" id="dilLevel"></div>
-          <div class="dim-bar-track"><div class="dim-bar-fill" id="dilBar"></div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Focus area -->
-    <div class="focus-area" id="focusArea">
-      <div class="focus-area-title" id="focusTitle"></div>
-      <p id="focusText"></p>
-    </div>
-
-    <div class="framework-note">
-      Based on the <a href="https://aifluencyframework.org/" target="_blank" rel="noopener">AI Fluency Framework</a> by Professors Rick Dakan &amp; Joseph Feller, in collaboration with <a href="https://www.anthropic.com/ai-fluency/overview" target="_blank" rel="noopener">Anthropic</a>.
-    </div>
+  <!-- THANK YOU STATE -->
+  <div class="thank-you" id="thankYouState">
+    <h1>You are all set</h1>
+    <p>Thanks for taking the time. I have what I need to prepare something real for our first session.</p>
+    <p style="margin-top: 16px;">You will also start getting your Daily Briefing in the morning. If anything catches your eye, just reply.</p>
   </div>
 
   <div class="tagline">BuildFirst. Learn AI by building with AI.</div>
 </div>
 
 <script>
-  // =====================
   // Energy map activities
-  // =====================
   const activities = [
     { name: 'Strategy and vision setting', key: 'strategy' },
     { name: 'Client and customer conversations', key: 'clients' },
@@ -812,6 +530,7 @@
 
   const btnClasses = ['drain-1', 'drain-2', 'neutral', 'energy-4', 'energy-5'];
 
+  // Build energy grid
   const grid = document.getElementById('energyGrid');
   activities.forEach(act => {
     const row = document.createElement('div');
@@ -837,10 +556,12 @@
       btn.dataset.activity = act.key;
       btn.dataset.value = i;
       btn.addEventListener('click', () => {
+        // Clear others in this row
         scale.querySelectorAll('.energy-btn').forEach(b => {
           b.classList.remove('selected', ...btnClasses);
         });
         btn.classList.add('selected', btnClasses[i - 1]);
+        // Update hidden input
         let hidden = document.getElementById('energy_' + act.key);
         if (!hidden) {
           hidden = document.createElement('input');
@@ -865,181 +586,7 @@
     grid.appendChild(row);
   });
 
-  // =============================
-  // 4D Fluency Assessment Questions
-  // =============================
-  const fluencyQs = [
-    {
-      num: 1,
-      dimension: 'spectrum',
-      dimLabel: 'Spectrum',
-      dimClass: 'dim-spectrum',
-      question: 'How do you use AI today?',
-      options: [
-        { text: 'I ask it questions when I am stuck', score: 1 },
-        { text: 'I have set up a few things that run on their own', score: 2 },
-        { text: 'I think with it — it is part of how I work through problems', score: 3 },
-        { text: 'I have built systems where AI handles entire workflows', score: 4 },
-      ]
-    },
-    {
-      num: 2,
-      dimension: 'delegation',
-      dimLabel: 'Delegation',
-      dimClass: 'dim-delegation',
-      question: 'A new project lands on your desk. How do you think about AI for it?',
-      options: [
-        { text: 'I would not really think about AI for it', score: 1 },
-        { text: 'I would try the obvious parts — drafting, summarising', score: 2 },
-        { text: 'I would break the project down and map where AI adds real value', score: 3 },
-        { text: 'I would design the entire workflow with AI as a partner from the start', score: 4 },
-      ]
-    },
-    {
-      num: 3,
-      dimension: 'description',
-      dimLabel: 'Description',
-      dimClass: 'dim-description',
-      question: 'When you ask AI to do something, how do you communicate what you need?',
-      options: [
-        { text: 'I type what I need and see what comes back', score: 1 },
-        { text: 'I give it context and examples', score: 2 },
-        { text: 'I define the role, the output format, the constraints, and the quality bar', score: 3 },
-        { text: 'I build reusable frameworks that encode how I think', score: 4 },
-      ]
-    },
-    {
-      num: 4,
-      dimension: 'discernment',
-      dimLabel: 'Discernment',
-      dimClass: 'dim-discernment',
-      question: 'AI gives you a piece of work. What do you do with it?',
-      options: [
-        { text: 'If it looks good, I use it', score: 1 },
-        { text: 'I skim it for obvious errors', score: 2 },
-        { text: 'I stress-test the reasoning and check what it might have missed', score: 3 },
-        { text: 'I have a systematic verification process before anything goes out', score: 4 },
-      ]
-    },
-    {
-      num: 5,
-      dimension: 'diligence',
-      dimLabel: 'Diligence',
-      dimClass: 'dim-diligence',
-      question: 'Your team wants to start using AI with client work. What is your first reaction?',
-      options: [
-        { text: 'Great, we should be using more AI', score: 1 },
-        { text: 'I would want to see the output before it goes to clients', score: 2 },
-        { text: 'I would want clear guidelines on what AI can and cannot do with client work', score: 3 },
-        { text: 'I would want a full framework: approved uses, data handling, review gates, audit trail', score: 4 },
-      ]
-    },
-    {
-      num: 6,
-      dimension: 'spectrum',
-      dimLabel: 'Spectrum',
-      dimClass: 'dim-spectrum',
-      question: 'Think about your last working week. How embedded was AI?',
-      options: [
-        { text: 'I did not really use it', score: 1 },
-        { text: 'A few tasks — drafting an email, looking something up', score: 2 },
-        { text: 'It was part of most of my thinking and decision-making', score: 3 },
-        { text: 'It ran in the background continuously, handling things for me', score: 4 },
-      ]
-    },
-    {
-      num: 7,
-      dimension: 'delegation',
-      dimLabel: 'Delegation',
-      dimClass: 'dim-delegation',
-      question: 'What would you NOT let AI do?',
-      options: [
-        { text: 'I have not really thought about it', score: 1 },
-        { text: 'I would not let it make decisions about people or money', score: 2 },
-        { text: 'I have clear categories: AI-safe, human-only, and collaborative', score: 3 },
-        { text: 'I have built those boundaries into my workflow design', score: 4 },
-      ]
-    },
-    {
-      num: 8,
-      dimension: 'description',
-      dimLabel: 'Description',
-      dimClass: 'dim-description',
-      question: 'AI gives you something that is not quite right. What do you do?',
-      options: [
-        { text: 'I fix it myself', score: 1 },
-        { text: 'I ask it to try again with a bit more direction', score: 2 },
-        { text: 'I diagnose why it missed and adjust my approach', score: 3 },
-        { text: 'I refine the underlying system so it does not happen again', score: 4 },
-      ]
-    },
-    {
-      num: 9,
-      dimension: 'discernment',
-      dimLabel: 'Discernment',
-      dimClass: 'dim-discernment',
-      question: 'How confident are you spotting when AI gets something wrong in your domain?',
-      options: [
-        { text: 'I am not always sure', score: 1 },
-        { text: 'I catch the big mistakes', score: 2 },
-        { text: 'I know where AI is reliable and where it is not in my field', score: 3 },
-        { text: 'I have built verification into my process so mistakes get caught automatically', score: 4 },
-      ]
-    },
-    {
-      num: 10,
-      dimension: 'diligence',
-      dimLabel: 'Diligence',
-      dimClass: 'dim-diligence',
-      question: 'Where do you want to be with AI twelve months from now?',
-      options: [
-        { text: 'I would like to use it more consistently', score: 1 },
-        { text: 'I want it handling my routine work reliably', score: 2 },
-        { text: 'I want it to be my thinking partner across everything I do', score: 3 },
-        { text: 'I want AI systems running key parts of my operation', score: 4 },
-      ]
-    },
-  ];
-
-  // Build fluency questions
-  const fluencyContainer = document.getElementById('fluencyQuestions');
-  fluencyQs.forEach(q => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'fluency-question';
-
-    const label = document.createElement('div');
-    label.className = 'q-label';
-    label.innerHTML = '<span class="q-number">' + q.num + '</span>' +
-      '<span>' + q.question + '</span>' +
-      '<span class="q-dimension ' + q.dimClass + '">' + q.dimLabel + '</span>';
-
-    const group = document.createElement('div');
-    group.className = 'option-group';
-
-    q.options.forEach(opt => {
-      const optLabel = document.createElement('label');
-      optLabel.className = 'option-label';
-
-      const radio = document.createElement('input');
-      radio.type = 'radio';
-      radio.name = 'Fluency Q' + q.num;
-      radio.value = opt.score;
-      radio.required = true;
-      radio.dataset.dimension = q.dimension;
-
-      optLabel.appendChild(radio);
-      optLabel.appendChild(document.createTextNode(' ' + opt.text));
-      group.appendChild(optLabel);
-    });
-
-    wrapper.appendChild(label);
-    wrapper.appendChild(group);
-    fluencyContainer.appendChild(wrapper);
-  });
-
-  // ========================
-  // Option label styling
-  // ========================
+  // Option label selection styling
   document.querySelectorAll('.option-label').forEach(label => {
     const input = label.querySelector('input');
     input.addEventListener('change', () => {
@@ -1055,205 +602,69 @@
     });
   });
 
-  // ========================
   // Progress bar
-  // ========================
   function updateProgress() {
     const form = document.getElementById('assessmentForm');
     const required = form.querySelectorAll('[required]');
     let filled = 0;
-    const radioGroups = new Set();
     required.forEach(el => {
       if (el.type === 'radio') {
-        const n = el.name;
-        radioGroups.add(n);
-        if (form.querySelector('input[name="' + CSS.escape(n) + '"]:checked')) filled++;
+        const name = el.name;
+        if (form.querySelector(`input[name="${name}"]:checked`)) filled++;
       } else if (el.value.trim()) {
         filled++;
       }
     });
+    // Count unique required radio groups
+    const radioGroups = new Set();
+    required.forEach(el => { if (el.type === 'radio') radioGroups.add(el.name); });
+    const totalFields = (required.length - Array.from(required).filter(e => e.type === 'radio').length) + radioGroups.size;
 
-    const textFields = Array.from(required).filter(e => e.type !== 'radio').length;
-    const totalFields = textFields + radioGroups.size;
-
-    // Count unique filled radio groups
-    let filledRadios = 0;
-    radioGroups.forEach(n => {
-      if (form.querySelector('input[name="' + CSS.escape(n) + '"]:checked')) filledRadios++;
-    });
-
+    // Also count energy selections
     const energyFilled = document.querySelectorAll('.energy-btn.selected').length;
     const energyTotal = activities.length;
 
-    const filledText = Array.from(required).filter(e => e.type !== 'radio' && e.value.trim()).length;
     const total = totalFields + energyTotal;
-    const current = filledText + filledRadios + energyFilled;
+    const current = filled + energyFilled;
     const pct = Math.min(100, Math.round((current / total) * 100));
     document.getElementById('progressBar').style.width = pct + '%';
   }
 
-  // ========================
-  // Scoring
-  // ========================
-  function calculateScores() {
-    const scores = { spectrum: [], delegation: [], description: [], discernment: [], diligence: [] };
+  // Pre-fill from URL params
+  const params = new URLSearchParams(window.location.search);
+  const pName = params.get('name');
+  const pCompany = params.get('company');
+  const pRole = params.get('role');
+  const pEmail = params.get('email');
 
-    fluencyQs.forEach(q => {
-      const selected = document.querySelector('input[name="Fluency Q' + q.num + '"]:checked');
-      if (selected) {
-        scores[q.dimension].push(parseInt(selected.value));
-      }
+  if (pName) {
+    document.getElementById('name').value = pName;
+    document.getElementById('clientSubtitle').textContent = 'Assessment for ' + pName;
+    document.getElementById('emailSubject').value = 'BuildFirst Assessment: ' + pName;
+  }
+  if (pCompany) document.getElementById('company').value = pCompany;
+  if (pRole) document.getElementById('role').value = pRole;
+  if (pEmail) document.getElementById('email').value = pEmail;
+
+  // If all personal fields are pre-filled, hide the "About you" section entirely
+  if (pName && pCompany && pRole && pEmail) {
+    const aboutSection = document.querySelector('#assessmentForm .section:first-of-type');
+    aboutSection.style.display = 'none';
+    // Convert visible inputs to hidden so values still submit
+    ['name', 'company', 'role', 'email'].forEach(id => {
+      document.getElementById(id).type = 'hidden';
     });
-
-    function avg(arr) { return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0; }
-
-    const allScores = Object.values(scores).flat();
-    const overall = avg(allScores);
-
-    return {
-      overall: overall,
-      delegation: avg(scores.delegation),
-      description: avg(scores.description),
-      discernment: avg(scores.discernment),
-      diligence: avg(scores.diligence),
-    };
   }
 
-  function getStage(score) {
-    if (score < 1.75) return 'asking';
-    if (score < 2.5) return 'automation';
-    if (score < 3.25) return 'augmentation';
-    return 'agency';
-  }
+  // Set thank-you redirect
+  document.getElementById('thankYouUrl').value = window.location.href.split('?')[0] + '?submitted=true';
 
-  function getLevel(score) {
-    if (score < 2.0) return 'developing';
-    if (score < 3.0) return 'growing';
-    return 'strong';
-  }
-
-  const stageDescriptions = {
-    asking: 'You are in the <strong>Asking</strong> stage. You use AI like a search engine — asking questions when you are stuck. This is a natural starting point, and there is a lot of low-hanging fruit ahead. Our first session will focus on finding one task where AI saves you real time.',
-    automation: 'You are in the <strong>Automation</strong> stage. You have started using AI for specific tasks and can see the value. The next step is building repeatable workflows so AI handles routine work reliably. We will identify your best automation candidate in our first session.',
-    augmentation: 'You are in the <strong>Augmentation</strong> stage. AI is your thinking partner. You use it to work through problems, not just execute tasks. The opportunity now is deepening that partnership — better prompts, better evaluation, more sophisticated workflows.',
-    agency: 'You are at the <strong>Agency</strong> stage. You have built systems where AI runs significant parts of your workflow. You are thinking about governance, reliability, and scaling. Our conversation will focus on the next frontier for your operation.',
-  };
-
-  const dimFocus = {
-    delegation: { title: 'Your focus area: Delegation', text: 'Start by mapping your recurring tasks into three buckets: AI-safe, human-only, and collaborative. This will sharpen your instinct for what to hand off and what to keep.' },
-    description: { title: 'Your focus area: Description', text: 'Practice giving AI more context up front — define the role you want it to play, the format you need, and the constraints. Better instructions mean dramatically better output.' },
-    discernment: { title: 'Your focus area: Discernment', text: 'Build a habit of stress-testing AI output. Ask yourself: what might it have missed? Where is it confident but wrong? Developing domain-specific evaluation instincts is the unlock.' },
-    diligence: { title: 'Your focus area: Diligence', text: 'Think about what guidelines your team needs around AI. Start with the basics: what is AI allowed to touch? Who reviews what? Having a framework, even a simple one, builds trust and safety.' },
-  };
-
-  // ========================
-  // Show results
-  // ========================
-  function showResults(scores) {
-    const email = document.getElementById('email').value;
-    document.getElementById('resultEmail').textContent = email;
-
-    // Spectrum
-    const stage = getStage(scores.overall);
-    document.querySelectorAll('.spectrum-segment').forEach(seg => {
-      if (seg.dataset.stage === stage) {
-        seg.classList.add('active');
-      }
-    });
-    document.getElementById('spectrumDesc').innerHTML = stageDescriptions[stage];
-
-    // 4D cards
-    const dims = [
-      { key: 'delegation', levelEl: 'delLevel', barEl: 'delBar' },
-      { key: 'description', levelEl: 'descLevel', barEl: 'descBar' },
-      { key: 'discernment', levelEl: 'discLevel', barEl: 'discBar' },
-      { key: 'diligence', levelEl: 'dilLevel', barEl: 'dilBar' },
-    ];
-
-    let lowestDim = null;
-    let lowestScore = 5;
-
-    dims.forEach(d => {
-      const score = scores[d.key];
-      const level = getLevel(score);
-      const levelEl = document.getElementById(d.levelEl);
-      levelEl.textContent = level.charAt(0).toUpperCase() + level.slice(1);
-      levelEl.className = 'dim-card-level level-' + level;
-      document.getElementById(d.barEl).style.width = ((score / 4) * 100) + '%';
-
-      if (score < lowestScore) {
-        lowestScore = score;
-        lowestDim = d.key;
-      }
-    });
-
-    // Focus area
-    if (lowestDim) {
-      document.getElementById('focusTitle').textContent = dimFocus[lowestDim].title;
-      document.getElementById('focusText').textContent = dimFocus[lowestDim].text;
-    }
-
-    // Show results, hide form
+  // Check if returning from submission
+  if (params.get('submitted') === 'true') {
     document.getElementById('formState').style.display = 'none';
-    document.getElementById('resultsState').style.display = 'block';
+    document.getElementById('thankYouState').style.display = 'block';
     document.getElementById('progressBar').style.width = '100%';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  // ========================
-  // Form submission
-  // ========================
-  document.getElementById('assessmentForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const scores = calculateScores();
-    const stage = getStage(scores.overall);
-    const form = this;
-    const formData = new FormData(form);
-
-    // Add computed scores to form data
-    formData.append('AI Fluency Stage', stage.charAt(0).toUpperCase() + stage.slice(1));
-    formData.append('Overall Score', scores.overall.toFixed(2));
-    formData.append('Delegation Score', scores.delegation.toFixed(2) + ' (' + getLevel(scores.delegation) + ')');
-    formData.append('Description Score', scores.description.toFixed(2) + ' (' + getLevel(scores.description) + ')');
-    formData.append('Discernment Score', scores.discernment.toFixed(2) + ' (' + getLevel(scores.discernment) + ')');
-    formData.append('Diligence Score', scores.diligence.toFixed(2) + ' (' + getLevel(scores.diligence) + ')');
-
-    // Add checkbox values as combined string
-    const toolsUsed = Array.from(form.querySelectorAll('input[name="Tools Used"]:checked')).map(cb => cb.value);
-    if (toolsUsed.length > 0) {
-      formData.set('Tools Used', toolsUsed.join(', '));
-    }
-
-    // Build JSON payload for Formsubmit AJAX
-    const data = {};
-    formData.forEach((value, key) => {
-      if (data[key]) {
-        data[key] = data[key] + ', ' + value;
-      } else {
-        data[key] = value;
-      }
-    });
-
-    // Formsubmit config
-    data['_subject'] = 'BuildFirst Assessment: ' + (data['Name'] || 'New Response');
-    data['_template'] = 'table';
-    data['_captcha'] = 'false';
-    data['_cc'] = data['Email'];
-    data['_autoresponse'] = 'Thanks for completing your BuildFirst assessment, ' + (data['Name'] || '') + '. Your AI fluency stage: ' + stage.charAt(0).toUpperCase() + stage.slice(1) + '. Delegation: ' + getLevel(scores.delegation) + '. Description: ' + getLevel(scores.description) + '. Discernment: ' + getLevel(scores.discernment) + '. Diligence: ' + getLevel(scores.diligence) + '. You will hear from me before our first session.';
-
-    // Show results immediately
-    showResults(scores);
-
-    // Send via Formsubmit AJAX
-    fetch('https://formsubmit.co/ajax/david@thisisluminary.co', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data),
-    }).catch(function() {
-      // Silent fail — results are shown regardless
-    });
-  });
 
   // Initial progress
   updateProgress();
